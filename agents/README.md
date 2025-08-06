@@ -15,7 +15,8 @@ GOOGLE_CLOUD_LOCATION=
 MODEL_NAME = 
 MODEL_VERSION= 
 ```
-- Forward port
+- Forward port  
+
 Open a terminal
 ```
 gcloud container clusters get-credentials {CLUSTER_NAME} --location {REGION}
