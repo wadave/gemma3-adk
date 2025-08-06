@@ -38,7 +38,8 @@ GOOGLE_CLOUD_PROJECT=
 GOOGLE_CLOUD_LOCATION= 
 VERTEX_AI_ENPOINT_ID = 
 ```
- - Run ADK web
+ - Run ADK web  
+ 
  Under `agent` folder, run
  ```
  uv run adk web --port 8001

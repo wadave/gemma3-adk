@@ -20,11 +20,13 @@ This repo shows how to set up fine-tuned Gemma3 on Vertex AI or GKE, and use wit
 ```
 
 ### Pre-requisites:
+
 - [gcloud installed](https://cloud.google.com/sdk/docs/install)
 - [kubectl installed](https://kubernetes.io/docs/tasks/tools/)
 - [uv package installed](https://docs.astral.sh/uv/getting-started/installation/)      
 
-### Deploy Gemma3 on GKE
+### Deploy Gemma3 on GKE. 
+
 Following the this notebook to deploy Gemma3 on GKE.
 ```
 ├── notebooks
@@ -33,12 +35,14 @@ Following the this notebook to deploy Gemma3 on GKE.
 ```
 
 
-### Deploy Gemma3 on Vertex AI
+### Deploy Gemma3 on Vertex AI  
+
 Following the this notebook to deploy Gemma3 on Vertex AI.
 ```
 ├── notebooks
     └── deploy_gemma3_vllm_on_vertex.ipynb
 ```
 
-### Run ADK agents
-Go to `agents` folder, and following the readme to run ADK agents.
+### Run ADK agents  
+
+Go to `agents` folder, and follow the readme to run ADK agents.
