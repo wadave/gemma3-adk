@@ -1,0 +1,20 @@
+For gke-agent, create a .env file with following keys:
+
+```
+
+GOOGLE_GENAI_USE_VERTEXAI=1
+GOOGLE_API_KEY=YOUR_VALUE_HERE
+GOOGLE_CLOUD_PROJECT= 
+GOOGLE_CLOUD_LOCATION= 
+MODEL_NAME = 
+MODEL_VERSION= 
+```
+
+For vertexai-agent, create a .env file with following keys:
+```
+GOOGLE_GENAI_USE_VERTEXAI=1
+GOOGLE_API_KEY=YOUR_VALUE_HERE
+GOOGLE_CLOUD_PROJECT= 
+GOOGLE_CLOUD_LOCATION= 
+VERTEX_AI_ENPOINT_ID = 
+```
