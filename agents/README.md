@@ -1,5 +1,7 @@
 # Instructions to run the agents
 
+Before run the agents, make sure Gemma3 model has been deployed to GKE or Vertex AI.
+
 ## Option 1: Run the agent use Gemma deployed on GKE cluster
 
 - For gke-agent, create a .env file with following keys:
