@@ -2,12 +2,14 @@
 import os
 from google.adk.agents import LlmAgent
 from google.adk.models.lite_llm import LiteLlm
-import google.auth
+from dotenv import load_dotenv
+
+load_dotenv()  # This loads the variables from .env into the environment
+
+MODEL_NAME = os.getenv("MODEL_NAME")
+MODEL_VERSION = os.getenv("MODEL_VERSION")
 
 
-import subprocess
-from google.adk.agents import Agent
-from google.adk.models.lite_llm import LiteLlm
 
 # --- Example Agent using a model hosted on a vLLM endpoint ---
 
@@ -15,16 +17,20 @@ from google.adk.models.lite_llm import LiteLlm
 api_base_url = "http://localhost:8000/v1"
 
 # Model name as recognized by *your* vLLM endpoint configuration
-model_name_at_endpoint = "hosted_vllm//gcs/gemma3-1b-vertex/full_merged_model" # Example from vllm_test.py
+model_name_at_endpoint = f"hosted_vllm//gcs/{MODEL_NAME}/{MODEL_VERSION}" # Example from vllm_test.py
 
 
-root_agent = Agent(
+root_agent = LlmAgent(
     model=LiteLlm(
         model=model_name_at_endpoint,
         api_base=api_base_url,
    
     ),
-    name="vllm_agent",
-    instruction="You are a helpful assistant running on a self-hosted vLLM endpoint.",
+    name="root_agent",
+    instruction=(
+        """You are a helpful AI assistant designed to provide accurate and useful
+        information."""
+    ),
+    description="Answers questions about math problems.",
    
 )
