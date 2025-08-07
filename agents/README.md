@@ -42,6 +42,7 @@ To allow your local machine to communicate with the model service running on GKE
 Open a terminal
 ```
 # Authenticate with your GKE cluster
+# Exmaple: gcloud container clusters get-credentials gke-gemma-cluster-test-20250806054246 --location us-central1
 gcloud container clusters get-credentials <YOUR_CLUSTER_NAME> --location <YOUR_REGION>
 
 # Forward the service port 8000 to your local machine

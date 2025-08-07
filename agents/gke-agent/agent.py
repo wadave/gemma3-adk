@@ -9,7 +9,7 @@ MODEL_NAME = os.getenv("MODEL_NAME")
 MODEL_VERSION = os.getenv("MODEL_VERSION")
 
 api_base_url = "http://localhost:8000/v1"
-model_name_at_endpoint = f"hosted_vllm//gcs/{MODEL_NAME}/{MODEL_VERSION}"  #
+model_name_at_endpoint = f"hosted_vllm//gcs/{MODEL_NAME}/{MODEL_VERSION}"
 
 root_agent = LlmAgent(
     name="root_agent",
