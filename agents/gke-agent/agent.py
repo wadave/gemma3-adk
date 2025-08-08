@@ -18,8 +18,7 @@ root_agent = LlmAgent(
         api_base=api_base_url,
     ),
     instruction=(
-        """You are a helpful AI assistant designed to provide accurate and useful
-        information."""
+        """You are a helpful agent who can answer user questions."""
     ),
     description="Answers questions about math problems.",
 )
