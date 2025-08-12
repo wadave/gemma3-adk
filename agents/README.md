@@ -21,17 +21,27 @@ cd agents/gke-agent
 
 Create a file named `.env` inside the gke-agent directory. This file will configure the agent to communicate with your local, port-forwarded model endpoint.
 
-.env file content:
 
-```
+The `.env` file should look like the file content as below:
 
+```bash
+# Choose Model Backend: 0 -> Gemini API key, 1 -> Vertex AI
 GOOGLE_GENAI_USE_VERTEXAI=1
+
+# Gemini API key backend config
 GOOGLE_API_KEY=YOUR_VALUE_HERE
-GOOGLE_CLOUD_PROJECT= 
-GOOGLE_CLOUD_LOCATION= 
-MODEL_NAME = 
-MODEL_VERSION= 
+
+# Vertex AI backend config
+GOOGLE_CLOUD_PROJECT= YOUR_VALUE_HERE
+GOOGLE_CLOUD_LOCATION= YOUR_VALUE_HERE
+
+# Model details
+MODEL_NAME = YOUR_VALUE_HERE
+MODEL_VERSION= YOUR_VALUE_HERE
+
 ```
+
+
 
 2. Connect to the GKE Service 
 
@@ -76,13 +86,20 @@ cd agents/vertexai-agent
 1. Set Up Environment Variables
 Create a file named `.env` inside the vertexai-agent directory. This file configures the agent with your Google Cloud project and Vertex AI endpoint details.
 
-.env file with following keys:
+`.env` file with following keys:
 ```
+# Choose Model Backend: 0 -> Gemini API key, 1 -> Vertex AI
 GOOGLE_GENAI_USE_VERTEXAI=1
+
+# Gemini API key backend config
 GOOGLE_API_KEY=YOUR_VALUE_HERE
-GOOGLE_CLOUD_PROJECT= 
-GOOGLE_CLOUD_LOCATION= 
-VERTEX_AI_ENPOINT_ID = 
+
+# Vertex AI backend config
+GOOGLE_CLOUD_PROJECT= YOUR_VALUE_HERE
+GOOGLE_CLOUD_LOCATION= YOUR_VALUE_HERE
+
+# Model details
+VERTEX_AI_ENDPOINT_ID = 
 ```
 2. Run the ADK Agent 
 
