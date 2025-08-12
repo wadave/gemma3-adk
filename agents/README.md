@@ -108,3 +108,29 @@ In your terminal (back to `agents`directory), start the ADK web server.
  Under `agent` folder, run
  ```
  uv run adk web --port 8002
+```
+3. Deploy the ADK Agent to Cloud Run
+
+Set up environment variables:
+```
+export GOOGLE_CLOUD_PROJECT=YOUR_VALUE_HERE
+export GOOGLE_CLOUD_LOCATION=us-central1 # Or your preferred location
+export GOOGLE_GENAI_USE_VERTEXAI=True
+export VERTEX_AI_ENDPOINT_ID=YOUR_VALUE_HERE
+```
+
+Deployment command:
+
+
+```
+gcloud run deploy vertexai-agent \
+  --source . \
+  --port 8080 \
+  --project $GOOGLE_CLOUD_PROJECT \
+  --allow-unauthenticated \
+  --update-env-vars GOOGLE_CLOUD_PROJECT=$GOOGLE_CLOUD_PROJECT,GOOGLE_CLOUD_LOCATION=us-central1,GOOGLE_GENAI_USE_VERTEXAI=True,VERTEX_AI_ENDPOINT_ID=$VERTEX_AI_ENDPOINT_ID \
+  --region us-central1 \
+  --memory=2Gi
+  ```
+
+Follow the url provided, select 'vertexai_agent' from the drop down window, then you can test the agent.

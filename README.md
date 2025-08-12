@@ -11,18 +11,23 @@ Once deployed, you can integrate your Gemma 3 model with intelligent agents buil
 
 ```.
 ├── agents
-│   ├── gke-agent         # ADK agent for the GKE-deployed model
-│   │   ├── agent.py
-│   │   └── __init__.py
-│   └── vertexai-agent    # ADK agent for the Vertex AI-deployed model
-│       ├── agent.py
-│       └── __init__.py
+│   ├── gke
+│   │   └── gke-agent
+│   │       ├── agent.py
+│   │       └── __init__.py
+│   ├── README.md
+│   └── vertexai
+│       └── vertexai-agent
+│           ├── agent.py
+│           └── __init__.py
+├── GEMINI.md
 ├── notebooks
+│   ├── common_util.py
 │   ├── deploy_gemma3_vllm_on_gke.ipynb
-│   └── deploy_gemma3_vllm_on_vertex.ipynb
+│   ├── deploy_gemma3_vllm_on_vertex.ipynb
 ├── pyproject.toml
 ├── README.md
-└── uv.lock 
+└── uv.lock
 ```
 
 
