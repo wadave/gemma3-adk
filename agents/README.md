@@ -61,7 +61,7 @@ kubectl port-forward service/llm-service 8000:8000
 
 You should see a message confirming the forwarding.
 
-3. Run the ADK Agent 
+3. Run the ADK Agent locally
 
 ➡️ Open another terminal window, navigate back to the `agents` directory, and start the ADK web server.
 
@@ -99,9 +99,9 @@ GOOGLE_CLOUD_PROJECT= YOUR_VALUE_HERE
 GOOGLE_CLOUD_LOCATION= YOUR_VALUE_HERE
 
 # Model details
-VERTEX_AI_ENDPOINT_ID = 
+VERTEX_AI_ENDPOINT_ID = YOUR_VALUE_HERE
 ```
-2. Run the ADK Agent 
+2. Run the ADK Agent locally
 
 In your terminal (back to `agents`directory), start the ADK web server.
 
