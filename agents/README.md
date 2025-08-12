@@ -120,7 +120,7 @@ export VERTEX_AI_ENDPOINT_ID=YOUR_VALUE_HERE
 ```
 
 Deployment command:
-
+Under 'agents' folder, run:
 
 ```
 gcloud run deploy vertexai-agent \
