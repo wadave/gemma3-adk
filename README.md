@@ -67,6 +67,19 @@ This approach uses the **Vertex AI Model Garden** to deploy Gemma 3 to a **Verte
 
 ➡️ **Follow the notebook:** [`notebooks/deploy_gemma3_vllm_on_vertex.ipynb`](./notebooks/deploy_gemma3_vllm_on_vertex.ipynb)
 
+Alternatively, you can also deploy your model using the following command:
+➡️ **Use the shell command:** [`notebooks/deploy_gemma3_vllm_on_vertex.sh`](./notebooks/deploy_gemma3_vllm_on_vertex.sh)
+
+Under `notebooks` directory:
+Please create a .env file with your PROJECT_ID, REGION, MODEL_BUCKET, MODEL_NAME, and
+
+Your model saved in S3 like this: GCS_MODEL_PATH = f"gs://{MODEL_BUCKET}/{MODEL_NAME}/{MODEL_VERSION}"
+```bash
+chmod u+x deploy_gemma3_vllm_on_vertex.sh
+uv run bash deploy_gemma3_vllm_on_vertex.sh
+```
+
+
 ---
 
 ### 🤖 Run the ADK Agents

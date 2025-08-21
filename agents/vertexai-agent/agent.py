@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()  
 
-PROJECT_ID = os.getenv("PROJECT_ID")
-REGION = os.getenv("REGION")
 ENDPOINT_ID = os.getenv("VERTEX_AI_ENDPOINT_ID")
 model = f"vertex_ai/openai/{ENDPOINT_ID}"
 
@@ -15,9 +13,7 @@ root_agent = LlmAgent(
     model=LiteLlm(
         model=model,
     ),
-    instruction=(
-        """You are a helpful AI assistant designed to provide accurate and useful
-        information."""
-    ),
+    instruction="""You are a helpful AI assistant designed to provide accurate and useful
+        information.""",
     description="Answers questions about math problems.",
 )
