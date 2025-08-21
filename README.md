@@ -73,7 +73,7 @@ Alternatively, you can also deploy your model using the following command:
 Under `notebooks` directory:
 Please create a .env file with your PROJECT_ID, REGION, MODEL_BUCKET, MODEL_NAME, and
 
-Your model saved in Google Cloud Storage bucket like this: 
+Your model is saved in Google Cloud Storage bucket like this: 
 ```gs://{MODEL_BUCKET}/{MODEL_NAME}/{MODEL_VERSION}```
 ```bash
 chmod u+x deploy_gemma3_vllm_on_vertex.sh
