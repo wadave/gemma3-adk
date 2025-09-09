@@ -9,24 +9,30 @@ Once deployed, you can integrate your Gemma 3 model with intelligent agents buil
 
 ### 📂 Folder Structure
 
-```.
+```bash
 ├── agents
-│   ├── gke
-│   │   └── gke-agent
-│   │       ├── agent.py
-│   │       └── __init__.py
+│   ├── Dockerfile
+│   ├── gke-agent
+│   │   ├── agent.py
+│   │   ├── __init__.py
+│   │   └── requirements.txt
+│   ├── pyproject.toml
 │   ├── README.md
-│   └── vertexai
-│       └── vertexai-agent
-│           ├── agent.py
-│           └── __init__.py
-├── GEMINI.md
-├── notebooks
+│   ├── uv.lock
+│   └── vertexai-agent
+│       ├── agent.py
+│       ├── __init__.py
+│       └── requirements.txt
+├── deployment
 │   ├── common_util.py
 │   ├── deploy_gemma3_vllm_on_gke.ipynb
+│   ├── deploy_gemma3_vllm_on_gke.sh
 │   ├── deploy_gemma3_vllm_on_vertex.ipynb
+│   ├── deploy_gemma3_vllm_on_vertex.py
+│   └── deploy_gemma3_vllm_on_vertex.sh
 ├── pyproject.toml
 ├── README.md
+├── requirements.txt
 └── uv.lock
 ```
 
@@ -59,18 +65,32 @@ Follow one of the notebooks below to deploy your Gemma 3 model.
 
 This approach uses **vLLM** to serve the Gemma 3 model on a GKE cluster, giving you full control over the serving environment and hardware.
 
-➡️ **Follow the notebook:** [`notebooks/deploy_gemma3_vllm_on_gke.ipynb`](./notebooks/deploy_gemma3_vllm_on_gke.ipynb)
+➡️ **Follow the notebook:** [`deployment/deploy_gemma3_vllm_on_gke.ipynb`](./deployment/deploy_gemma3_vllm_on_gke.ipynb)
+
+Alternatively, you can also deploy your model using the following command:
+➡️ **Use the shell command:** [`deployment/deploy_gemma3_vllm_on_gke.sh`](./deployment/deploy_gemma3_vllm_on_gke.sh)
+
+Under `deployment` directory:
+
+Please create a .env file with your PROJECT_ID, REGION, MODEL_BUCKET, MODEL_NAME, MODEL_VERSION, CLUSTER_NAME, PROJECT_NUMBER, and KSA_NAME
+
+Your model is saved in Google Cloud Storage bucket like this: 
+```gs://{MODEL_BUCKET}/{MODEL_NAME}/{MODEL_VERSION}```
+```bash
+chmod u+x deploy_gemma3_vllm_on_gke.sh
+uv run bash deploy_gemma3_vllm_on_gke.sh
+```
 
 ### Option 2: Deploy to Vertex AI
 
 This approach uses the **Vertex AI Model Garden** to deploy Gemma 3 to a **Vertex AI Endpoint**. This is a fully managed, auto-scaling solution that simplifies deployment and maintenance.
 
-➡️ **Follow the notebook:** [`notebooks/deploy_gemma3_vllm_on_vertex.ipynb`](./notebooks/deploy_gemma3_vllm_on_vertex.ipynb)
+➡️ **Follow the notebook:** [`deployment/deploy_gemma3_vllm_on_vertex.ipynb`](./deployment/deploy_gemma3_vllm_on_vertex.ipynb)
 
 Alternatively, you can also deploy your model using the following command:
-➡️ **Use the shell command:** [`notebooks/deploy_gemma3_vllm_on_vertex.sh`](./notebooks/deploy_gemma3_vllm_on_vertex.sh)
+➡️ **Use the shell command:** [`deployment/deploy_gemma3_vllm_on_vertex.sh`](./deployment/deploy_gemma3_vllm_on_vertex.sh)
 
-Under `notebooks` directory:
+Under `deployment` directory:
 Please create a .env file with your PROJECT_ID, REGION, MODEL_BUCKET, MODEL_NAME, and
 
 Your model is saved in Google Cloud Storage bucket like this: 
